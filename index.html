@@ -2,80 +2,86 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-<title>John M. — Large-Scale Research Search & Retrieval</title>
+  <title>whmatrix — Semantic Indexing & RAG Infrastructure</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Protocol-governed semantic indexing and RAG-ready vector indices" />
 
   <style>
     :root {
-      --fg: #111;
-      --muted: #555;
-      --accent: #005cc5;
-      --border: #e5e7eb;
-      --bg-soft: #f8fafc;
+      --bg: #0d1117;
+      --bg-surface: #161b22;
+      --border: #30363d;
+      --fg: #e6edf3;
+      --fg-muted: #7d8590;
+      --link: #58a6ff;
+      --green: #3fb950;
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     body {
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-      max-width: 980px;
-      margin: 48px auto;
-      padding: 0 24px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+      max-width: 768px;
+      margin: 0 auto;
+      padding: 48px 24px;
       color: var(--fg);
-      line-height: 1.65;
-      background: #fff;
+      line-height: 1.6;
+      background: var(--bg);
     }
 
     header {
-      margin-bottom: 48px;
+      margin-bottom: 40px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
     }
 
     h1 {
-      font-size: 2.2rem;
-      margin-bottom: 0.25em;
-    }
-
-    .subtitle {
+      font-size: 1.75rem;
+      margin: 0 0 8px 0;
       font-weight: 600;
-      font-size: 1.05rem;
     }
 
-    .muted {
-      color: var(--muted);
+    .handle {
+      color: var(--fg-muted);
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+    }
+
+    .tagline {
+      color: var(--fg-muted);
+      font-size: 0.95rem;
+      margin: 0;
     }
 
     section {
-      margin-bottom: 48px;
+      margin-bottom: 36px;
     }
 
     h2 {
-      font-size: 1.3rem;
-      margin-bottom: 0.75em;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 0.3em;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 0 0 16px 0;
+      color: var(--fg);
     }
 
     ul {
-      padding-left: 1.2em;
+      margin: 0;
+      padding-left: 20px;
     }
 
     li {
-      margin-bottom: 0.4em;
+      margin-bottom: 8px;
+      color: var(--fg-muted);
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 24px;
-    }
-
-    .card {
-      background: var(--bg-soft);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 16px 18px;
+    li a {
+      color: var(--link);
     }
 
     a {
-      color: var(--accent);
+      color: var(--link);
       text-decoration: none;
     }
 
@@ -83,31 +89,98 @@
       text-decoration: underline;
     }
 
-    .links {
+    .nav-links {
       display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-      margin-top: 12px;
+      flex-direction: column;
+      gap: 8px;
     }
 
-    .link-item {
-      display: inline-flex;
+    .nav-link {
+      display: flex;
       align-items: center;
       gap: 8px;
+      padding: 10px 14px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.9rem;
+    }
+
+    .nav-link:hover {
+      text-decoration: none;
+      border-color: var(--link);
+    }
+
+    .nav-link .label {
+      color: var(--fg);
       font-weight: 500;
     }
 
-    .link-item svg {
-      width: 18px;
-      height: 18px;
-      fill: currentColor;
+    .nav-link .desc {
+      color: var(--fg-muted);
+      margin-left: auto;
+      font-size: 0.85rem;
+    }
+
+    .status {
+      color: var(--green);
+      font-weight: 500;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .evidence-list {
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .evidence-list li {
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .evidence-list li:last-child {
+      border-bottom: none;
+    }
+
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    @media (max-width: 500px) {
+      .principles {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .principle {
+      padding: 12px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.85rem;
+      color: var(--fg-muted);
     }
 
     footer {
-      margin-top: 64px;
-      padding-top: 16px;
+      margin-top: 48px;
+      padding-top: 24px;
       border-top: 1px solid var(--border);
-      font-size: 0.95rem;
+      font-size: 0.85rem;
+      color: var(--fg-muted);
+    }
+
+    footer a {
+      color: var(--link);
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 16px;
+      margin-top: 8px;
     }
   </style>
 </head>
@@ -116,91 +189,66 @@
 
 <header>
   <h1>John Mitchell</h1>
- <div class="subtitle">Search & retrieval systems for large research document collections</div>
-  <p class="muted">
-  I build production-ready search and retrieval systems for large research document collections, using modern embedding and indexing techniques.
-</p>
-
-  <div class="links">
-    <a class="link-item" href="https://github.com/whmatrix" target="_blank" rel="noopener">
-      <!-- GitHub icon -->
-      <svg viewBox="0 0 24 24">
-        <path d="M12 .5C5.73.5.5 5.73.5 12c0 5.09 3.29 9.41 7.86 10.94.57.1.78-.25.78-.56v-2.17c-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.27-5.23-5.66 0-1.25.45-2.27 1.19-3.07-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.17a11.1 11.1 0 0 1 5.8 0c2.21-1.48 3.18-1.17 3.18-1.17.63 1.59.23 2.77.11 3.06.74.8 1.19 1.82 1.19 3.07 0 4.4-2.68 5.37-5.24 5.65.41.35.78 1.05.78 2.12v3.15c0 .31.21.67.79.56A11.52 11.52 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/>
-      </svg>
-      GitHub
-    </a>
-
-    <a class="link-item" href="https://www.linkedin.com/in/john-mitchell-b400063a1/" target="_blank" rel="noopener">
-      <!-- LinkedIn icon -->
-      <svg viewBox="0 0 24 24">
-        <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8.5h4V24h-4zM8.5 8.5h3.8v2.1h.1c.53-1 1.83-2.1 3.77-2.1 4.03 0 4.78 2.65 4.78 6.1V24h-4v-7.9c0-1.88-.03-4.3-2.62-4.3-2.62 0-3.02 2.05-3.02 4.17V24h-4z"/>
-      </svg>
-      LinkedIn
-    </a>
-
-    <a class="link-item" href="https://www.upwork.com/services/product/development-it-semantic-indexing-for-rag-cleaning-chunking-embeddings-faiss-indexes-1999170844126095737" target="_blank" rel="noopener">
-      Upwork
-    </a>
-
-    <a class="link-item" href="https://www.fiverr.com/s/99ZRzgj" target="_blank" rel="noopener">
-      Fiverr
-    </a>
-  </div>
+  <div class="handle">@whmatrix</div>
+  <p class="tagline">Protocol-governed semantic indexing for RAG systems</p>
 </header>
 
 <section>
-  <h2>Proven Scale</h2>
+  <h2>Start Here</h2>
+  <div class="nav-links">
+    <a class="nav-link" href="https://github.com/whmatrix/universal-protocol-v4.23" target="_blank" rel="noopener">
+      <span class="label">universal-protocol-v4.23</span>
+      <span class="desc">Canonical protocol</span>
+    </a>
+    <a class="nav-link" href="https://github.com/whmatrix/semantic-indexing-batch-02" target="_blank" rel="noopener">
+      <span class="label">semantic-indexing-batch-02</span>
+      <span class="desc">Implementation</span>
+    </a>
+    <a class="nav-link" href="https://github.com/whmatrix/whmatrix.github.io" target="_blank" rel="noopener">
+      <span class="label">whmatrix.github.io</span>
+      <span class="desc">Site source</span>
+    </a>
+  </div>
+</section>
+
+<section>
+  <h2>What I Deliver</h2>
   <ul>
-    <li>8.35+ million vectors indexed</li>
-    <li>Wikipedia Featured Articles</li>
-    <li>ArXiv ML abstracts</li>
-    <li>StackExchange Python (7.5M+ vectors)</li>
-    <li>e5-large-v2 embeddings (FP16, GPU)</li>
-    <li>FAISS IndexFlatIP</li>
+    <li>RAG-ready vector indices (FAISS IndexFlatIP, FP16)</li>
+    <li>Audit reports with explicit quality gates</li>
+    <li>Protocol-governed pipeline rebuilds</li>
+    <li>Chunk manifests with metadata and provenance</li>
+    <li>Verification artifacts (checksums, summaries)</li>
   </ul>
 </section>
 
 <section>
-  <h2>Portfolio: Deliverables & Audits (v4.23)</h2>
-  <p>My work follows <a href="https://github.com/whmatrix/universal-protocol-v4.23" target="_blank">Universal Protocol v4.23</a> — standardized deliverable contracts, audit criteria, and quality gates.</p>
-  <ul>
-    <li><a href="https://github.com/whmatrix/universal-protocol-v4.23/blob/main/portfolio_artifacts/Semantic_Indexing_Output__Example_Structure.pdf" target="_blank">Deliverable Structure Example (PDF)</a></li>
-    <li><a href="https://github.com/whmatrix/universal-protocol-v4.23/blob/main/portfolio_artifacts/Portfolio_01_RAG_Readiness_Audit.pdf" target="_blank">RAG Readiness Audit (PDF)</a></li>
-    <li><a href="https://github.com/whmatrix/universal-protocol-v4.23/blob/main/portfolio_artifacts/RAG_Readiness_Audit__Sample_Report.pdf" target="_blank">Sample Audit Report (PDF)</a></li>
-    <li><a href="https://github.com/whmatrix/universal-protocol-v4.23/blob/main/portfolio_artifacts/Portfolio_02_RAG_Ready_Semantic_Indexing.pdf" target="_blank">RAG-Ready Indexing Example (PDF)</a></li>
-    <li><a href="https://github.com/whmatrix/universal-protocol-v4.23/blob/main/portfolio_artifacts/Portfolio_03_Large_Scale_Semantic_Indexing.pdf" target="_blank">Large-Scale Indexing Example (PDF)</a></li>
+  <h2>Evidence</h2>
+  <ul class="evidence-list">
+    <li><a href="https://github.com/whmatrix/universal-protocol-v4.23/blob/main/portfolio_artifacts/Semantic_Indexing_Output__Example_Structure.pdf" target="_blank" rel="noopener">Deliverable Structure Example</a> <span class="status">PDF</span></li>
+    <li><a href="https://github.com/whmatrix/universal-protocol-v4.23/blob/main/portfolio_artifacts/Portfolio_01_RAG_Readiness_Audit.pdf" target="_blank" rel="noopener">RAG Readiness Audit</a> <span class="status">PDF</span></li>
+    <li><a href="https://github.com/whmatrix/universal-protocol-v4.23/blob/main/portfolio_artifacts/RAG_Readiness_Audit__Sample_Report.pdf" target="_blank" rel="noopener">Sample Audit Report</a> <span class="status">PDF</span></li>
+    <li><a href="https://github.com/whmatrix/universal-protocol-v4.23/blob/main/portfolio_artifacts/Portfolio_02_RAG_Ready_Semantic_Indexing.pdf" target="_blank" rel="noopener">RAG-Ready Indexing Example</a> <span class="status">PDF</span></li>
+    <li><a href="https://github.com/whmatrix/universal-protocol-v4.23/blob/main/portfolio_artifacts/Portfolio_03_Large_Scale_Semantic_Indexing.pdf" target="_blank" rel="noopener">Large-Scale Indexing Example</a> <span class="status">PDF</span></li>
   </ul>
-  <p>Code implementation: <a href="https://github.com/whmatrix/semantic-indexing-batch-02" target="_blank">semantic-indexing-batch-02</a></p>
 </section>
 
-<section class="grid">
-  <div class="card">
-    <h2>What I Build</h2>
-    <ul>
-      <li>Text cleaning & normalization</li>
-      <li>Semantic chunking (512–800 tokens)</li>
-      <li>GPU-optimized embedding pipelines</li>
-      <li>FAISS vector indexes with metadata & verification</li>
-      <li>RAG-ready delivery packages</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h2>Client Deliverables</h2>
-    <ul>
-      <li>chunks.json</li>
-      <li>metadata.jsonl</li>
-      <li>summary.json</li>
-      <li>vectors.index (FAISS)</li>
-      <li>index_info.json</li>
-    </ul>
+<section>
+  <h2>Operating Principles</h2>
+  <div class="principles">
+    <div class="principle">GREEN-only deployment</div>
+    <div class="principle">Determinism over throughput</div>
+    <div class="principle">Semantic coherence enforced</div>
+    <div class="principle">Protocol > convenience</div>
   </div>
 </section>
 
 <footer>
-  <p class="muted">
-    Contact via LinkedIn, Upwork, or Fiverr.
-  </p>
+  <p>Contact</p>
+  <div class="contact-links">
+    <a href="https://github.com/whmatrix" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://www.linkedin.com/in/john-mitchell-b400063a1/" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
 </footer>
 
 </body>

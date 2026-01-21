@@ -1,12 +1,6 @@
 > **Status: ENTRY_ROUTER (Portfolio Hub)**
-
-# whmatrix.github.io
-
-Professional portfolio showcasing production-grade semantic indexing and RAG infrastructure.
-
-**Live site**: https://whmatrix.github.io
-
----
+>
+> Professional portfolio showcasing production-grade semantic indexing and RAG infrastructure.
 
 ## Start Here
 
@@ -15,7 +9,13 @@ Professional portfolio showcasing production-grade semantic indexing and RAG inf
 | **[Universal Protocol v4.23](https://github.com/whmatrix/universal-protocol-v4.23)** | Canonical spec: deliverable contracts, audit contracts, quality gates |
 | **[semantic-indexing-batch-02](https://github.com/whmatrix/semantic-indexing-batch-02)** | Production implementation: 8.3M+ vectors indexed |
 
+> Note: [semantic-indexing-batch-01](https://github.com/whmatrix/semantic-indexing-batch-01) is a superseded foundation batch.
+
 ---
+
+# whmatrix.github.io
+
+**Live site**: https://whmatrix.github.io
 
 ## Production Stats
 

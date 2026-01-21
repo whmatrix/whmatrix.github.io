@@ -1,31 +1,34 @@
+> **Status: ENTRY_ROUTER (Portfolio Hub)**
+
 # whmatrix.github.io
 
-This repository contains the source for the public portfolio website at:
+Professional portfolio showcasing production-grade semantic indexing and RAG infrastructure.
 
-https://whmatrix.github.io
+**Live site**: https://whmatrix.github.io
 
-## Purpose
+---
 
-This site serves as a **presentation and routing layer**, not a full technical explanation.
+## Start Here
 
-It provides:
-- A concise overview of current work
-- Links to canonical protocol definitions
-- Direct access to verified portfolio artifacts
+| Resource | Description |
+|----------|-------------|
+| **[Universal Protocol v4.23](https://github.com/whmatrix/universal-protocol-v4.23)** | Canonical spec: deliverable contracts, audit contracts, quality gates |
+| **[semantic-indexing-batch-02](https://github.com/whmatrix/semantic-indexing-batch-02)** | Production implementation: 8.3M+ vectors indexed |
 
-## Canonical References
+---
 
-Authoritative technical material lives in the following repositories:
+## Production Stats
 
-- Universal Protocol (v4.23):
-  https://github.com/whmatrix/universal-protocol-v4.23
+- **Total Vectors**: 8,355,163 across 3 datasets
+- **Datasets**: Wikipedia Featured Articles, StackExchange Python, ArXiv ML Abstracts
+- **Model**: intfloat/e5-large-v2 (1024-dim embeddings)
+- **Index**: FAISS IndexFlatIP
 
-- Implementation portfolio:
-  https://github.com/whmatrix/semantic-indexing-batch-02
-
-This repository intentionally avoids duplicating protocol specifications or implementation details.
+---
 
 ## Scope
+
+This site serves as a **presentation and routing layer**, not a full technical explanation.
 
 - Static HTML/CSS only
 - No JavaScript frameworks

@@ -26,9 +26,9 @@
 
 ## Production Stats
 
-- **Total Vectors**: 8,355,163 across 3 production datasets
+- **Total Vectors**: 9,016,688 across 9 production datasets (batch-01 + batch-02)
 - **Research Corpora**: 4,600+ documents across 10 institutions (~75,000 chunks)
-- **Datasets**: Wikipedia Featured Articles, StackExchange Python, ArXiv ML Abstracts
+- **Datasets**: Wikipedia Featured Articles, StackExchange Python, ArXiv ML Abstracts, 20 Newsgroups, SimpleWiki, IMDB, StackOverflow, AG News, Disaster Tweets
 - **Model**: intfloat/e5-large-v2 (1024-dim embeddings)
 - **Index**: FAISS IndexFlatIP
 

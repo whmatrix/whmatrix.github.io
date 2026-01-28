@@ -34,6 +34,31 @@
 
 ---
 
+## Visual Overview
+
+```
++-------------------------------------------------------+
+|            whmatrix: Semantic Search Stack             |
++-------------------------------------------------------+
+|                                                       |
+|  SCALE          STANDARDS     THEORY     APPLICATION  |
+|    |               |            |            |        |
+|    +- 661K       +- Protocol  +- Grammar  +- 10      |
+|    +- 8.35M      +- v4.23    +- Primitives  orgs    |
+|                               +- Mechanics           |
+|                                                       |
+|  [Try Demo]  [View Specs]  [See Architecture]         |
++-------------------------------------------------------+
+
+Vectors indexed:      9,016,688 (across 9 datasets)
+Documents analyzed:   4,600+ (across 10 institutions)
+Query latency:        <100ms (single query)
+Embedding model:      e5-large-v2 (1024-dim, FP16)
+Index type:           FAISS IndexFlatIP
+```
+
+---
+
 ## Scope
 
 This site serves as a **presentation and routing layer**, not a full technical explanation.

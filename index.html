@@ -267,24 +267,26 @@ Query: "semantic search and vector retrieval"
 
 Query: "how to build a FAISS index"
   Top result: FAISS: Fast Similarity Search at Scale (score: 0.844)</pre>
-  <p style="margin-top: 12px; font-size: 0.85rem; color: var(--fg-muted);">Scores &gt; 0.83 = strong semantic match. Run it yourself: <code style="background: var(--bg-surface); padding: 2px 6px; border-radius: 3px;">cd mini-index &amp;&amp; python demo_query.py</code></p>
+  <p style="margin-top: 12px; font-size: 0.85rem; color: var(--fg-muted);">Scores &gt; 0.83 = strong semantic match (cosine similarity on L2-normalized embeddings).</p>
+  <pre style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 6px; padding: 14px; font-size: 0.82rem; overflow-x: auto; color: var(--fg-muted); margin-top: 12px;">git clone https://github.com/whmatrix/semantic-indexing-batch-02
+cd semantic-indexing-batch-02/mini-index
+pip install sentence-transformers faiss-cpu
+python demo_query.py</pre>
 </section>
 
 <section>
   <h2>Find Your Path</h2>
-  <div class="nav-links">
-    <a class="nav-link" href="https://github.com/whmatrix/research-corpus-discovery" target="_blank" rel="noopener">
-      <span class="label">Research Archive Search</span>
-      <span class="desc">4,600+ docs across 10 institutions</span>
-    </a>
-    <a class="nav-link" href="https://github.com/whmatrix/semantic-indexing-batch-02" target="_blank" rel="noopener">
-      <span class="label">Production-Scale Indexing</span>
-      <span class="desc">8.35M vectors, 3 domains</span>
-    </a>
-    <a class="nav-link" href="https://github.com/whmatrix/universal-protocol-v4.23" target="_blank" rel="noopener">
-      <span class="label">Audit &amp; Compliance</span>
-      <span class="desc">Protocol spec + quality gates</span>
-    </a>
+  <div style="border-left: 3px solid var(--link); padding-left: 14px; margin-bottom: 16px;">
+    <p style="margin: 0 0 4px 0; color: var(--fg); font-weight: 500;">Have research documents to search?</p>
+    <p style="margin: 0; font-size: 0.85rem; color: var(--fg-muted);">Start with <a href="https://github.com/whmatrix/research-corpus-discovery" target="_blank" rel="noopener">research-corpus-discovery</a> &mdash; 4,600+ docs across 10 institutions, runnable demo</p>
+  </div>
+  <div style="border-left: 3px solid var(--green); padding-left: 14px; margin-bottom: 16px;">
+    <p style="margin: 0 0 4px 0; color: var(--fg); font-weight: 500;">Need production-scale indexing?</p>
+    <p style="margin: 0; font-size: 0.85rem; color: var(--fg-muted);">See <a href="https://github.com/whmatrix/semantic-indexing-batch-02" target="_blank" rel="noopener">semantic-indexing-batch-02</a> &mdash; 8.35M vectors, parallel split-merge, checkpointing</p>
+  </div>
+  <div style="border-left: 3px solid #d29922; padding-left: 14px; margin-bottom: 16px;">
+    <p style="margin: 0 0 4px 0; color: var(--fg); font-weight: 500;">Need pre-deployment validation?</p>
+    <p style="margin: 0; font-size: 0.85rem; color: var(--fg-muted);">Use the <a href="https://github.com/whmatrix/universal-protocol-v4.23" target="_blank" rel="noopener">audit contract</a> &mdash; deliverable spec, quality gates, pass/fail thresholds</p>
   </div>
 </section>
 

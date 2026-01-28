@@ -275,6 +275,34 @@ python demo_query.py</pre>
 </section>
 
 <section>
+  <h2>What You Get</h2>
+  <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-bottom: 16px;">
+    <tr style="border-bottom: 1px solid var(--border);">
+      <th style="text-align: left; padding: 8px 8px 8px 0; color: var(--fg);">Deliverable</th>
+      <th style="text-align: left; padding: 8px; color: var(--fg);">Format</th>
+      <th style="text-align: left; padding: 8px; color: var(--fg);">Guarantee</th>
+    </tr>
+    <tr style="border-bottom: 1px solid var(--border);">
+      <td style="padding: 8px 8px 8px 0; color: var(--fg-muted);">Vector index</td>
+      <td style="padding: 8px; color: var(--fg-muted);">FAISS IndexFlatIP (exact cosine via L2-normalized inner product)</td>
+      <td style="padding: 8px; color: var(--fg-muted);">Deterministic, byte-reproducible</td>
+    </tr>
+    <tr style="border-bottom: 1px solid var(--border);">
+      <td style="padding: 8px 8px 8px 0; color: var(--fg-muted);">Chunk corpus</td>
+      <td style="padding: 8px; color: var(--fg-muted);">JSONL with metadata</td>
+      <td style="padding: 8px; color: var(--fg-muted);">len(vectors) == len(chunks) == len(metadata)</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px 8px 8px 0; color: var(--fg-muted);">Audit summary</td>
+      <td style="padding: 8px; color: var(--fg-muted);">JSON manifest</td>
+      <td style="padding: 8px; color: var(--fg-muted);">Pass/fail quality gates per Universal Protocol v4.23</td>
+    </tr>
+  </table>
+  <p style="font-size: 0.85rem; color: var(--fg-muted); margin: 0 0 8px 0;"><strong style="color: var(--fg);">What this is not:</strong> No human-judged relevance labels. No MRR/MAP/NDCG claims. Scores are cosine similarity (vector alignment), not precision or recall. Domain suitability requires independent evaluation.</p>
+  <p style="font-size: 0.85rem; color: var(--fg-muted); margin: 0;"><strong style="color: var(--fg);">Reproduce it:</strong> <code style="background: var(--bg-surface); padding: 2px 6px; border-radius: 3px; font-size: 0.8rem;">git clone &amp; cd mini-index &amp; python demo_query.py</code> &mdash; see <a href="https://github.com/whmatrix/semantic-indexing-batch-02/tree/main/mini-index" target="_blank" rel="noopener">mini-index</a></p>
+</section>
+
+<section>
   <h2>Find Your Path</h2>
   <div style="border-left: 3px solid var(--link); padding-left: 14px; margin-bottom: 16px;">
     <p style="margin: 0 0 4px 0; color: var(--fg); font-weight: 500;">Have research documents to search?</p>

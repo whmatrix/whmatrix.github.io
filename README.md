@@ -1,3 +1,4 @@
+> **Author:** John Mitchell (@whmatrix)
 > **Status: ENTRY_ROUTER (Portfolio Hub)**
 >
 > Professional portfolio showcasing production-grade semantic indexing and RAG infrastructure.

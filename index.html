@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>whmatrix — Semantic Indexing & RAG Infrastructure</title>
+  <title>whmatrix — Semantic Indexing & Agentic RAG Infrastructure</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Protocol-governed semantic indexing and RAG-ready vector indices" />
+  <meta name="description" content="Agentic RAG infrastructure: 606M vectors, 447 datasets, tool-calling orchestration over 12 domains" />
 
   <style>
     :root {
@@ -203,19 +203,27 @@
 <header>
   <h1>John Mitchell</h1>
   <div class="handle">@whmatrix</div>
-  <p class="tagline">Semantic Indexing & RAG Services — whmatrix</p>
+  <p class="tagline">Semantic Indexing & Agentic RAG Infrastructure — 606M vectors, 447 datasets, 12 domains</p>
 </header>
 
 <section>
   <h2>Start Here</h2>
   <div class="nav-links">
+    <a class="nav-link" href="https://github.com/whmatrix/agentic-retrieval-system" target="_blank" rel="noopener">
+      <span class="label">agentic-retrieval-system</span>
+      <span class="desc">Agentic orchestration</span>
+    </a>
     <a class="nav-link" href="https://github.com/whmatrix/universal-protocol-v4.23" target="_blank" rel="noopener">
       <span class="label">universal-protocol-v4.23</span>
       <span class="desc">Canonical protocol</span>
     </a>
     <a class="nav-link" href="https://github.com/whmatrix/semantic-indexing-batch-02" target="_blank" rel="noopener">
       <span class="label">semantic-indexing-batch-02</span>
-      <span class="desc">Implementation</span>
+      <span class="desc">Production indexing</span>
+    </a>
+    <a class="nav-link" href="https://github.com/whmatrix/corpus-scale-operations" target="_blank" rel="noopener">
+      <span class="label">corpus-scale-operations</span>
+      <span class="desc">Infrastructure ops</span>
     </a>
     <a class="nav-link" href="https://github.com/whmatrix/multi-domain-indexing-registry" target="_blank" rel="noopener">
       <span class="label">multi-domain-indexing-registry</span>
@@ -231,12 +239,19 @@
 <section>
   <h2>What I Deliver</h2>
   <ul>
+    <li>Agentic RAG orchestration (tool-calling ReAct loop over 606M+ vectors)</li>
     <li>RAG-ready vector indices (FAISS IndexFlatIP, FP16)</li>
     <li>Audit reports with explicit quality gates</li>
     <li>Protocol-governed pipeline rebuilds</li>
     <li>Chunk manifests with metadata and provenance</li>
     <li>Verification artifacts (checksums, summaries)</li>
   </ul>
+</section>
+
+<section>
+  <h2>Agentic Retrieval</h2>
+  <p style="font-size: 0.9rem; color: var(--fg-muted);">The reasoning model is the first stage, not the last. An orchestrator (Qwen3-Coder-30B-A3B) decides what to retrieve from 447 datasets across 12 domains using tool-calling over FAISS indexes, rerankers, and classifiers. Deep reasoning (DeepSeek R1) runs once over curated evidence.</p>
+  <p style="font-size: 0.85rem; margin-top: 8px;"><a href="https://github.com/whmatrix/agentic-retrieval-system" target="_blank" rel="noopener">Full architecture and performance data</a></p>
 </section>
 
 <section>
@@ -310,16 +325,16 @@ python demo_query.py</pre>
 <section>
   <h2>Find Your Path</h2>
   <div style="border-left: 3px solid var(--link); padding-left: 14px; margin-bottom: 16px;">
-    <p style="margin: 0 0 4px 0; color: var(--fg); font-weight: 500;">Have research documents to search?</p>
-    <p style="margin: 0; font-size: 0.85rem; color: var(--fg-muted);">Start with <a href="https://github.com/whmatrix/research-corpus-discovery" target="_blank" rel="noopener">research-corpus-discovery</a> &mdash; 4,600+ docs across 10 institutions, runnable demo</p>
+    <p style="margin: 0 0 4px 0; color: var(--fg); font-weight: 500;">Need agentic RAG at scale?</p>
+    <p style="margin: 0; font-size: 0.85rem; color: var(--fg-muted);">Start with <a href="https://github.com/whmatrix/agentic-retrieval-system" target="_blank" rel="noopener">agentic-retrieval-system</a> &mdash; tool-calling orchestration over 606M vectors, 447 datasets</p>
   </div>
   <div style="border-left: 3px solid var(--green); padding-left: 14px; margin-bottom: 16px;">
     <p style="margin: 0 0 4px 0; color: var(--fg); font-weight: 500;">Need production-scale indexing?</p>
     <p style="margin: 0; font-size: 0.85rem; color: var(--fg-muted);">See <a href="https://github.com/whmatrix/semantic-indexing-batch-02" target="_blank" rel="noopener">semantic-indexing-batch-02</a> &mdash; 8.35M vectors, parallel split-merge, checkpointing</p>
   </div>
   <div style="border-left: 3px solid #d29922; padding-left: 14px; margin-bottom: 16px;">
-    <p style="margin: 0 0 4px 0; color: var(--fg); font-weight: 500;">Need pre-deployment validation?</p>
-    <p style="margin: 0; font-size: 0.85rem; color: var(--fg-muted);">Use the <a href="https://github.com/whmatrix/universal-protocol-v4.23" target="_blank" rel="noopener">audit contract</a> &mdash; deliverable spec, quality gates, pass/fail thresholds</p>
+    <p style="margin: 0 0 4px 0; color: var(--fg); font-weight: 500;">Have research documents to search?</p>
+    <p style="margin: 0; font-size: 0.85rem; color: var(--fg-muted);">Start with <a href="https://github.com/whmatrix/research-corpus-discovery" target="_blank" rel="noopener">research-corpus-discovery</a> &mdash; 4,600+ docs across 10 institutions, runnable demo</p>
   </div>
 </section>
 
